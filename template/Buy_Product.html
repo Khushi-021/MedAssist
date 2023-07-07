@@ -1,0 +1,83 @@
+<html>
+   <head>
+        <title>HealthCare</title>
+
+
+      <!--    jQuery API IMPORT-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+
+  <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!--    <script src="/static/user.js" ></script>-->
+   </head>
+
+  <body>
+
+ {% include 'NavBar.html' %}
+
+
+   <div class="container" style="margin-top: 50px;">
+       <div class="row">
+           <div class="col s6">
+               <img src="/static/{{product.productimage}}" width="70%">
+           </div>
+
+           <div class="col s6">
+               <div style="font-weight:initial;font-size: 30px;"> {{product.productname}}         </div>
+
+               <div style="margin: 5px;">
+                   <span style="font-weight: lighter;font-size: 15px;color:dimgrey;margin-right: 25px;">{{product.cname}}</span>
+                   <span  style="font-weight: lighter;font-size: 15px;color:dimgrey">{{product.scname}}</span>
+               </div>
+
+               <hr size="1" width="100%" color="#b2bec3" style="margin-top: 10px;">
+
+              <div style="margin-top: 20px;">
+                  <span style="color:#636e72;font-size: medium;font-weight: bold">Best Price*</span>
+                  <span style="font-size: medium;color: #ef5350;font-weight: bold">&#x20b9 {{product.offerprice}}</span>
+
+                  <div style="font-size:14px;color: #636e72">
+
+                  <span >MRP:</span>
+                     <span><s>&#x20b9 {{product.price}}</s></span>
+                      <div style="font-size:13px; ">(Inclusive of all taxes)</div>
+                  </div>
+
+                      <ul style="font-size: 13px;color: #636e72">
+                          <li>  * Mkt: {{product.bname}}    </li>
+                          <li>* Country of Origin: India</li>
+                          <li>* Delivery charges if applicable will be applied at checkout</li>
+
+                      </ul>
+              </div>
+               <div style="margin-top: 10px;margin-bottom: 20px;">
+                    <span id="qtycomponent">
+
+                        <a productid="{{product.productid}}" product="{{product}}" class="btn-floating btn-small remove" style="background: #2f3640;"><i class="material-icons">remove</i></a>
+                         <span id="qnty"></span>
+                         <a product="{{product}}" class="btn-floating btn-small plus" style="background: #2f3640;"><i class="material-icons">add</i></a>
+                     </span>
+
+                        <button  class="btn addtocart" product="{{ product }}" style="margin-right:20px;background: #2f3640;">ADD TO CART</button>
+                        <button class="btn " style="background: #2f3640;">BUY NOW   </button>
+
+
+               </div>
+           </div>
+
+</div>
+   </div>
+
+  {% include 'Footer.html' %}
+
+  </body>
+
+</html>
